@@ -25,7 +25,7 @@ export function TrendingRespositoriesCard({
 
 export function RepositoryItem() {
   return (
-    <div className="px-6 py-3 flex items-start">
+    <div className="px-6 py-3 flex flex-col space-y-4 md:space-y-0 md:flex-row items-start">
       <div className="flex flex-grow gap-y-2 flex-col">
         <div className="flex gap-3 items-center text-sm">
           <Avatar className="h-6 w-6">

@@ -8,6 +8,7 @@ import {
   Inbox,
   Menu,
   Plus,
+  Search,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -39,17 +40,20 @@ export function Header() {
       </div>
 
       <nav className="flex items-center gap-2">
-        <form>
+        <form className="hidden md:block">
           <Input placeholder="Search" />
         </form>
 
-        <Separator orientation="vertical" className="h-8 mx-2" />
+        <Separator
+          orientation="vertical"
+          className="h-8 mx-2 hidden md:block"
+        />
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="flex px-2 justify-between gap-2 items-center"
+              className="px-2 justify-between gap-2 items-center hidden md:flex"
             >
               <Plus className="h-4 w-4" />
               <ChevronDown className="h-3 w-3" />
@@ -95,11 +99,14 @@ export function Header() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" className="hidden md:inline-flex">
           <CircleDot className="h-4 w-4" />
         </Button>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" className="hidden md:inline-flex">
           <GitBranch className="h-4 w-4" />
+        </Button>
+        <Button variant="outline" size="icon" className="md:hidden">
+          <Search className="h-4 w-4" />
         </Button>
         <Button variant="outline" size="icon">
           <Inbox className="h-4 w-4" />
